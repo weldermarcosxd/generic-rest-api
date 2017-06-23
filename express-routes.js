@@ -40,7 +40,7 @@ router.get('/:id', function(req, res, next) {
 
 router.get('/:id/:relation', function(req, res, next) {
     var query = {};
-    query[req.genericRestApi.modelName+'_'+'id'] = req.params.id;
+    query[req.genericRestApi.modelName] = req.params.id;
 
     req.genericRestApi.models[req.params.relation]
     .findAll({
